@@ -1,14 +1,12 @@
 import React from 'react'
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import FormSection from './FormSection/FormSection'
 
 
-function App() {
+const App = () => {
 
   return (
-    <div>
-      <p>12123</p>
+    <div className='form-section'>
+      <FormSection />
     </div>
   )
 }
