@@ -1,6 +1,8 @@
 .form-section-inner {
     width: 800px;
     margin: 0 auto;
+    padding-top: 149px;
+    padding-bottom: 107px;
 }
 
 .form-inputs {
@@ -68,4 +70,60 @@
 
 .custom-checkbox:hover:active {
     color: #4B72C2;
+}
+
+.form-button {
+    padding: 14px 53px 13px 51px;
+    border-radius: 4px;
+    background-color: #4B72C2;
+    font-size: 16px;
+    line-height: 21px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 84px;
+} 
+
+
+.form-bottom-text-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-bottom-text {
+    font-size: 16px;
+    line-height: 21px;
+    color: #7F7F7F;
+    position: relative;
+}
+
+.form-bottom-text::before {
+    content: '';
+    width: 800px;
+    height: 3px;
+    border-bottom: 2px solid #3D3D3D;
+    position: absolute;
+    left: 0px;
+    top: -32px;
+}
+
+.form-bottom-link {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 21px;
+    color: #4B72C2;
+    position: relative;
+}
+
+.form-bottom-link::after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-image: url(../assets/arrow-right.png);
+    position: absolute;
+    right: -25px;
+    bottom: 1px;
+    background-repeat: no-repeat;
+    background-position: center;
 }

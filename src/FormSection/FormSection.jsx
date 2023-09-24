@@ -49,20 +49,25 @@ const FormSection = () => {
         placeholder="Повторите пароль" />
 
         <div className="form-checkbox-inner">
-          <label htmlFor="form-checkbox">
+          <label className="custom-checkbox" htmlFor="form-checkbox">
             <input 
           className="form-checkbox"
           type="checkbox" 
           name="checkbox" 
           id="form-checkbox" />
-          <span className="custom-checkbox"></span>
           Подтверждаю пароль
           </label>
         </div>
       </div>
         
 
-        <button>Продолжить</button>
+      <button className="form-button">Продолжить</button>
+
+      <div className="form-bottom-text-inner">
+        <p className="form-bottom-text">Уже есть аккаунт ?</p>
+        <a className="form-bottom-link" href="/">Войти</a>
+      </div>
+      
 
       </div>
     </div>
