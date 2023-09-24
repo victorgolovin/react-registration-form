@@ -1,18 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import './FormSection.css'
+import FormTitle from "../FormTitle/FormTitle"
+import FormText from "../FormText/FormText"
+
 
 const FormSection = () => {
   return (
     <div className="container">
       <div className="form-section-inner">
-
-        <h2 className="form-title">Создание аккаунта</h2>
-
-        <p className="form-text">
-          Введите свои данные, чтобы создать аккаунт в сервисе
-        </p>
-      
+        <FormTitle />
+        <FormText />
       <div className="form-inputs">
       <input 
         className="form-input"
@@ -50,13 +48,17 @@ const FormSection = () => {
         name="repeat-pass" 
         placeholder="Повторите пароль" />
 
-        <label>
-          <input 
+        <div className="form-checkbox-inner">
+          <label htmlFor="form-checkbox">
+            <input 
+          className="form-checkbox"
           type="checkbox" 
           name="checkbox" 
-          id="" />
+          id="form-checkbox" />
+          <span className="custom-checkbox"></span>
           Подтверждаю пароль
-        </label>
+          </label>
+        </div>
       </div>
         
 
