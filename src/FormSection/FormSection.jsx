@@ -7,28 +7,114 @@ import FormText from "../FormText/FormText";
 const FormSection = () => {
 
   const [formRegistering, setFormRegistering] = useState({
-    name: 'name',
-    surname: 'surname',
-    number: 'number',
-    email: 'email',
-
+    name: '',
+    surname: '',
+    number: '',
+    email: '',
+    password: '',
+    repeatpassword: ''
   });
+
+  const [formIsError, setFormIsError] = useState(false)
+  const [formIsSuccess, setFormIsSuccess] = useState(false)
 
   const handleNameInputChange = (event) => {
     setFormRegistering ({
       ...formRegistering,
       name: event.target.value,
-      surname: event.target.value,
-      number: event.target.value,
-      email: event.target.value,
-      password: event.target.value,
-      repeatpassword: event.target.value
     })
-    console.log(event.target.value)
+  }
+
+  const handleSurnameInputChange = (event) => {
+    setFormRegistering ({
+      ...formRegistering,
+      surname: event.target.value,
+    })
+  }
+
+  const handleNumberInputChange = (event) => {
+    setFormRegistering ({
+      ...formRegistering,
+      number: event.target.value,
+    })
+  }
+
+  const handleEmailInputChange = (event) => {
+    setFormRegistering ({
+      ...formRegistering,
+      email: event.target.value,
+    })
+  }
+
+  const handlePasswordInputChange = (event) => {
+    setFormRegistering ({
+      ...formRegistering,
+      password: event.target.value,
+    })
+  }
+
+  const handleRepeatPasswordInputChange = (event) => {
+    setFormRegistering ({
+      ...formRegistering,
+      repeatpassword: event.target.value,
+    })
   }
 
   const handleFormBtn = () => {
-    console.log('press')
+    if (!formRegistering.name) {
+      setFormIsError(true)
+      setFormIsSuccess(false)
+      return
+    }
+
+    if (!formRegistering.surname) {
+      setFormIsError(true)
+      setFormIsSuccess(false)
+      return
+    }
+
+    if (!formRegistering.number) {
+      setFormIsError(true)
+      setFormIsSuccess(false)
+      return
+    }
+
+    if (!formRegistering.email) {
+      setFormIsError(true)
+      setFormIsSuccess(false)
+      return
+    }
+
+    if (!formRegistering.password) {
+      setFormIsError(true)
+      setFormIsSuccess(false)
+      return
+    }
+
+    if (!formRegistering.repeatpassword) {
+      setFormIsError(true)
+      setFormIsSuccess(false)
+      return
+    }
+
+    setFormIsError(false)
+    setFormIsSuccess(true)
+
+    setFormRegistering ({
+      ...formRegistering,
+      name: formRegistering.name,
+      surname: formRegistering.surname,
+      number: formRegistering.number,
+      email: formRegistering.email,
+      password: formRegistering.password,
+      repeatpassword: formRegistering.repeatpassword
+    })
+    console.log(formRegistering.name)
+    console.log(formRegistering.surname)
+    console.log(formRegistering.number)
+    console.log(formRegistering.email)
+    console.log(formRegistering.password)
+    console.log(formRegistering.repeatpassword)
   }
 
   return (
@@ -36,6 +122,10 @@ const FormSection = () => {
       <div className="form-section-inner">
         <FormTitle />
         <FormText />
+
+        { formIsError ? (<p className="form-error-text">Ошибка в форме!</p>) : '' }
+        { formIsSuccess ? (<p className="form-success-text">Регистрация прошла успешно!</p>) : '' }
+
         <div className="form-inputs">
           <input
             className="form-input"
@@ -50,7 +140,7 @@ const FormSection = () => {
             type="text"
             surname="surname"
             placeholder="Фамилия"
-            onChange={handleNameInputChange}
+            onChange={handleSurnameInputChange}
           />
 
           <input
@@ -58,7 +148,7 @@ const FormSection = () => {
             type="text"
             number="number"
             placeholder="Номер телефона"
-            onChange={handleNameInputChange}
+            onChange={handleNumberInputChange}
           />
 
           <input
@@ -66,7 +156,7 @@ const FormSection = () => {
             type="text"
             email="email"
             placeholder="Email"
-            onChange={handleNameInputChange}
+            onChange={handleEmailInputChange}
           />
 
           <input
@@ -74,7 +164,7 @@ const FormSection = () => {
             type="text"
             password="password"
             placeholder="Пароль"
-            onChange={handleNameInputChange}
+            onChange={handlePasswordInputChange}
           />
 
           <input
@@ -82,7 +172,7 @@ const FormSection = () => {
             type="text"
             repeatpassword="repeatpassword"
             placeholder="Повторите пароль"
-            onChange={handleNameInputChange}
+            onChange={handleRepeatPasswordInputChange}
           />
 
           <div className="form-checkbox-inner">

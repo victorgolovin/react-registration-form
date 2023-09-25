@@ -5,6 +5,12 @@
     padding-bottom: 107px;
 }
 
+.form-error-text,
+.form-success-text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
 .form-inputs {
     display: flex;
     flex-direction: column;
