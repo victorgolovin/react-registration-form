@@ -6,7 +6,8 @@
 }
 
 .form-error-text,
-.form-success-text {
+.form-success-text,
+.form-pass-text {
     text-align: center;
     margin-bottom: 50px;
 }
@@ -37,45 +38,10 @@
     color: #7F7F7F;
 }
 
-.form-checkbox-inner {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
 .form-checkbox {
-    width: 24px;
-    height: 24px;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
-    opacity: 0;
-    position: absolute;
-}
-
-
-.custom-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-size: 16px;
-    line-height: 21px;
-    color: #7F7F7F;
-    cursor: pointer;
-}
-
-.custom-checkbox::before {
-    content: '';
-    width: 24px;
-    height: 24px;
-    border: 1px solid #3D3D3D;
-    border-radius: 4px;
-}
-
-.custom-checkbox:hover::before {
-    background-color: #4B72C2;
-}
-
-.custom-checkbox:hover:active {
-    color: #4B72C2;
 }
 
 .form-button {
@@ -88,7 +54,11 @@
     cursor: pointer;
     border: none;
     margin-bottom: 84px;
-} 
+}
+
+.form-button:hover {
+    background-color: #7993c7;
+}
 
 
 .form-bottom-text-inner {
@@ -126,10 +96,13 @@
     content: '';
     width: 18px;
     height: 18px;
-    background-image: url(../assets/arrow-right.png);
     position: absolute;
     right: -25px;
     bottom: 1px;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.form-bottom-link:hover {
+    color: #7993c7;
 }

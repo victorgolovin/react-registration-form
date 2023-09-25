@@ -12,60 +12,39 @@ const FormSection = () => {
     number: '',
     email: '',
     password: '',
-    repeatpassword: ''
+    repeatpassword: '',
+    checkbox: ''
   });
 
   const [formIsError, setFormIsError] = useState(false)
   const [formIsSuccess, setFormIsSuccess] = useState(false)
+  const [formPassError, setFormPassError] = useState(false)
 
-  const handleNameInputChange = (event) => {
+  const handleInputChange = (event) => {
+    const { name, value } = event.target
+
     setFormRegistering ({
       ...formRegistering,
-      name: event.target.value,
-    })
-  }
-
-  const handleSurnameInputChange = (event) => {
-    setFormRegistering ({
-      ...formRegistering,
-      surname: event.target.value,
-    })
-  }
-
-  const handleNumberInputChange = (event) => {
-    setFormRegistering ({
-      ...formRegistering,
-      number: event.target.value,
-    })
-  }
-
-  const handleEmailInputChange = (event) => {
-    setFormRegistering ({
-      ...formRegistering,
-      email: event.target.value,
-    })
-  }
-
-  const handlePasswordInputChange = (event) => {
-    setFormRegistering ({
-      ...formRegistering,
-      password: event.target.value,
-    })
-  }
-
-  const handleRepeatPasswordInputChange = (event) => {
-    setFormRegistering ({
-      ...formRegistering,
-      repeatpassword: event.target.value,
+      [name]: value
     })
   }
 
   const handleFormBtn = () => {
-    if (!formRegistering.name) {
-      setFormIsError(true)
-      setFormIsSuccess(false)
-      return
-    }
+    
+    // if (!formRegistering.name,
+    //     !formRegistering.surname,
+    //     !formRegistering.number,
+    //     !formRegistering.email,
+    //     !formRegistering.password,
+    //     !formRegistering.repeatpassword,
+    //     !formRegistering.checkbox) {
+    //   setFormIsError(true)
+    //   setFormIsSuccess(false)
+    //   return
+    // }
+
+    // setFormIsError(false)
+    // setFormIsSuccess(true)
 
     if (!formRegistering.surname) {
       setFormIsError(true)
@@ -97,8 +76,20 @@ const FormSection = () => {
       return
     }
 
+    if (!formRegistering.checkbox) {
+      setFormIsError(true)
+      setFormIsSuccess(false)
+      return
+    }
+
+    if (formRegistering.password !== formRegistering.repeatpassword) {
+      setFormPassError(true)
+      return
+    }
+
     setFormIsError(false)
     setFormIsSuccess(true)
+    setFormPassError(false)
 
     setFormRegistering ({
       ...formRegistering,
@@ -107,7 +98,8 @@ const FormSection = () => {
       number: formRegistering.number,
       email: formRegistering.email,
       password: formRegistering.password,
-      repeatpassword: formRegistering.repeatpassword
+      repeatpassword: formRegistering.repeatpassword,
+      checkbox: formRegistering.checkbox
     })
     console.log(formRegistering.name)
     console.log(formRegistering.surname)
@@ -115,6 +107,7 @@ const FormSection = () => {
     console.log(formRegistering.email)
     console.log(formRegistering.password)
     console.log(formRegistering.repeatpassword)
+    console.log(formRegistering.checkbox)
   }
 
   return (
@@ -125,6 +118,7 @@ const FormSection = () => {
 
         { formIsError ? (<p className="form-error-text">Ошибка в форме!</p>) : '' }
         { formIsSuccess ? (<p className="form-success-text">Регистрация прошла успешно!</p>) : '' }
+        { formPassError ? (<p className="form-pass-text">Пароль должен совпадать!</p>) : '' }
 
         <div className="form-inputs">
           <input
@@ -132,59 +126,58 @@ const FormSection = () => {
             type="text"
             name="name"
             placeholder="Имя"
-            onChange={handleNameInputChange}
+            onChange={handleInputChange}
           />
 
           <input
             className="form-input"
             type="text"
-            surname="surname"
+            name="surname"
             placeholder="Фамилия"
-            onChange={handleSurnameInputChange}
+            onChange={handleInputChange}
           />
 
           <input
             className="form-input"
             type="text"
-            number="number"
+            name="number"
             placeholder="Номер телефона"
-            onChange={handleNumberInputChange}
+            onChange={handleInputChange}
           />
 
           <input
             className="form-input"
             type="text"
-            email="email"
+            name="email"
             placeholder="Email"
-            onChange={handleEmailInputChange}
+            onChange={handleInputChange}
           />
 
           <input
             className="form-input"
             type="text"
-            password="password"
+            name="password"
             placeholder="Пароль"
-            onChange={handlePasswordInputChange}
+            onChange={handleInputChange}
           />
 
           <input
             className="form-input"
             type="text"
-            repeatpassword="repeatpassword"
+            name="repeatpassword"
             placeholder="Повторите пароль"
-            onChange={handleRepeatPasswordInputChange}
+            onChange={handleInputChange}
           />
 
           <div className="form-checkbox-inner">
-            <label className="custom-checkbox" htmlFor="form-checkbox">
-              <input
-                className="form-checkbox"
-                type="checkbox"
-                name="checkbox"
-                id="form-checkbox"
-              />
-              Подтверждаю пароль
-            </label>
+          <label>
+            <input
+            className="form-checkbox"
+            type="checkbox" 
+            name="checkbox"
+            // checked={formIsError ? (true) : false}
+            onChange={handleInputChange} /> Подтверждаю пароль 
+          </label>
           </div>
         </div>
 
