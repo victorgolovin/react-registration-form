@@ -19,6 +19,7 @@ const FormSection = () => {
   const [formIsError, setFormIsError] = useState(false)
   const [formIsSuccess, setFormIsSuccess] = useState(false)
   const [formPassError, setFormPassError] = useState(false)
+  const [formCheckboxIsChecked, setFromCheckboxIsChecked] = useState(false)
 
   const handleInputChange = (event) => {
     const { name, value } = event.target
@@ -29,22 +30,14 @@ const FormSection = () => {
     })
   }
 
+ 
   const handleFormBtn = () => {
-    
-    // if (!formRegistering.name,
-    //     !formRegistering.surname,
-    //     !formRegistering.number,
-    //     !formRegistering.email,
-    //     !formRegistering.password,
-    //     !formRegistering.repeatpassword,
-    //     !formRegistering.checkbox) {
-    //   setFormIsError(true)
-    //   setFormIsSuccess(false)
-    //   return
-    // }
 
-    // setFormIsError(false)
-    // setFormIsSuccess(true)
+    if (!formRegistering.name) {
+      setFormIsError(true)
+      setFormIsSuccess(false)
+      return
+    }
 
     if (!formRegistering.surname) {
       setFormIsError(true)
@@ -64,6 +57,8 @@ const FormSection = () => {
       return
     }
 
+    setFormIsError(false)
+
     if (!formRegistering.password) {
       setFormIsError(true)
       setFormIsSuccess(false)
@@ -76,20 +71,22 @@ const FormSection = () => {
       return
     }
 
-    if (!formRegistering.checkbox) {
-      setFormIsError(true)
-      setFormIsSuccess(false)
-      return
-    }
-
     if (formRegistering.password !== formRegistering.repeatpassword) {
       setFormPassError(true)
       return
     }
 
-    setFormIsError(false)
-    setFormIsSuccess(true)
     setFormPassError(false)
+
+    if (!formRegistering.checkbox) {
+      setFormIsSuccess(false)
+      setFromCheckboxIsChecked(true)
+      return
+    }
+    
+    setFormIsSuccess(true)
+    setFromCheckboxIsChecked(false)
+
 
     setFormRegistering ({
       ...formRegistering,
@@ -101,6 +98,7 @@ const FormSection = () => {
       repeatpassword: formRegistering.repeatpassword,
       checkbox: formRegistering.checkbox
     })
+
     console.log(formRegistering.name)
     console.log(formRegistering.surname)
     console.log(formRegistering.number)
@@ -119,6 +117,8 @@ const FormSection = () => {
         { formIsError ? (<p className="form-error-text">Ошибка в форме!</p>) : '' }
         { formIsSuccess ? (<p className="form-success-text">Регистрация прошла успешно!</p>) : '' }
         { formPassError ? (<p className="form-pass-text">Пароль должен совпадать!</p>) : '' }
+        { formCheckboxIsChecked ? (<p className="form-checkbox-text">Нажмите "Подтверждаю пароль"!</p>) : '' }
+
 
         <div className="form-inputs">
           <input
@@ -170,13 +170,13 @@ const FormSection = () => {
           />
 
           <div className="form-checkbox-inner">
-          <label>
+          <label className="form-checkbox">
             <input
-            className="form-checkbox"
+            className="form-checkbox-input"
             type="checkbox" 
             name="checkbox"
-            // checked={formIsError ? (true) : false}
-            onChange={handleInputChange} /> Подтверждаю пароль 
+            onChange={handleInputChange} /> Подтверждаю пароль
+            <span className="check-box"></span>
           </label>
           </div>
         </div>
