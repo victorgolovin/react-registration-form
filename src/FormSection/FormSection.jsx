@@ -171,6 +171,7 @@ const FormSection = () => {
 
           <div className="form-checkbox-inner">
           <label className="form-checkbox">
+            
             <input
             className="form-checkbox-input"
             type="checkbox" 

@@ -40,7 +40,11 @@
 }
 
 .form-checkbox {
-    display: block;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
 }
 
 .form-checkbox-input {
@@ -48,7 +52,6 @@
 }
 
 .check-box {
-    position: absolute;
     width: 24px;
     height: 24px;
     border: 1px solid #3D3D3D;
