@@ -29,9 +29,9 @@ const FormSection = () => {
       [name]: value
     })
   }
-
  
   const handleFormBtn = () => {
+    
 
     if (!formRegistering.name) {
       setFormIsError(true)
@@ -86,7 +86,7 @@ const FormSection = () => {
     
     setFormIsSuccess(true)
     setFromCheckboxIsChecked(false)
-
+    
 
     setFormRegistering ({
       ...formRegistering,
@@ -98,6 +98,8 @@ const FormSection = () => {
       repeatpassword: formRegistering.repeatpassword,
       checkbox: formRegistering.checkbox
     })
+
+
 
     console.log(formRegistering.name)
     console.log(formRegistering.surname)
@@ -170,8 +172,7 @@ const FormSection = () => {
           />
 
           <div className="form-checkbox-inner">
-          <label className="form-checkbox">
-            
+          <label className="form-checkbox">            
             <input
             className="form-checkbox-input"
             type="checkbox" 
