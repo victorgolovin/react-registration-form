@@ -32,44 +32,49 @@ const FormSection = () => {
  
   const handleFormBtn = () => {
     
-
-    if (!formRegistering.name) {
+    if (!setFormRegistering) {
       setFormIsError(true)
       setFormIsSuccess(false)
       return
     }
 
-    if (!formRegistering.surname) {
-      setFormIsError(true)
-      setFormIsSuccess(false)
-      return
-    }
+    // if (!formRegistering.name) {
+    //   setFormIsError(true)
+    //   setFormIsSuccess(false)
+    //   return
+    // }
 
-    if (!formRegistering.number) {
-      setFormIsError(true)
-      setFormIsSuccess(false)
-      return
-    }
+    // if (!formRegistering.surname) {
+    //   setFormIsError(true)
+    //   setFormIsSuccess(false)
+    //   return
+    // }
 
-    if (!formRegistering.email) {
-      setFormIsError(true)
-      setFormIsSuccess(false)
-      return
-    }
+    // if (!formRegistering.number) {
+    //   setFormIsError(true)
+    //   setFormIsSuccess(false)
+    //   return
+    // }
 
-    setFormIsError(false)
+    // if (!formRegistering.email) {
+    //   setFormIsError(true)
+    //   setFormIsSuccess(false)
+    //   return
+    // }
 
-    if (!formRegistering.password) {
-      setFormIsError(true)
-      setFormIsSuccess(false)
-      return
-    }
+    // setFormIsError(false)
 
-    if (!formRegistering.repeatpassword) {
-      setFormIsError(true)
-      setFormIsSuccess(false)
-      return
-    }
+    // if (!formRegistering.password) {
+    //   setFormIsError(true)
+    //   setFormIsSuccess(false)
+    //   return
+    // }
+
+    // if (!formRegistering.repeatpassword) {
+    //   setFormIsError(true)
+    //   setFormIsSuccess(false)
+    //   return
+    // }
 
     if (formRegistering.password !== formRegistering.repeatpassword) {
       setFormPassError(true)
