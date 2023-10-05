@@ -31,50 +31,24 @@ const FormSection = () => {
   }
  
   const handleFormBtn = () => {
-    
-    if (!setFormRegistering) {
+
+    if(!formRegistering.name,
+      !formRegistering.surname,
+      !formRegistering.number,
+      !formRegistering.email) {
+        setFormIsError(true)
+        setFormIsSuccess(false)
+        return
+      }
+
+    setFormIsError(false)
+
+    if (!formRegistering.password,
+      !formRegistering.repeatpassword) {
       setFormIsError(true)
       setFormIsSuccess(false)
       return
     }
-
-    // if (!formRegistering.name) {
-    //   setFormIsError(true)
-    //   setFormIsSuccess(false)
-    //   return
-    // }
-
-    // if (!formRegistering.surname) {
-    //   setFormIsError(true)
-    //   setFormIsSuccess(false)
-    //   return
-    // }
-
-    // if (!formRegistering.number) {
-    //   setFormIsError(true)
-    //   setFormIsSuccess(false)
-    //   return
-    // }
-
-    // if (!formRegistering.email) {
-    //   setFormIsError(true)
-    //   setFormIsSuccess(false)
-    //   return
-    // }
-
-    // setFormIsError(false)
-
-    // if (!formRegistering.password) {
-    //   setFormIsError(true)
-    //   setFormIsSuccess(false)
-    //   return
-    // }
-
-    // if (!formRegistering.repeatpassword) {
-    //   setFormIsError(true)
-    //   setFormIsSuccess(false)
-    //   return
-    // }
 
     if (formRegistering.password !== formRegistering.repeatpassword) {
       setFormPassError(true)
@@ -103,8 +77,6 @@ const FormSection = () => {
       repeatpassword: formRegistering.repeatpassword,
       checkbox: formRegistering.checkbox
     })
-
-
 
     console.log(formRegistering.name)
     console.log(formRegistering.surname)
