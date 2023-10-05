@@ -16,6 +16,7 @@ const FormSection = () => {
     checkbox: ''
   });
 
+
   const [formIsError, setFormIsError] = useState(false)
   const [formIsSuccess, setFormIsSuccess] = useState(false)
   const [formPassError, setFormPassError] = useState(false)
@@ -26,7 +27,7 @@ const FormSection = () => {
 
     setFormRegistering ({
       ...formRegistering,
-      [name]: value
+      [name]: value,
     })
   }
  
@@ -40,6 +41,7 @@ const FormSection = () => {
         setFormIsSuccess(false)
         return
       }
+
 
     setFormIsError(false)
 
@@ -80,7 +82,7 @@ const FormSection = () => {
 
     console.log(formRegistering.name)
     console.log(formRegistering.surname)
-    console.log(formRegistering.number)
+    console.log(typeof formRegistering.number)
     console.log(formRegistering.email)
     console.log(formRegistering.password)
     console.log(formRegistering.repeatpassword)
@@ -118,7 +120,7 @@ const FormSection = () => {
 
           <input
             className="form-input"
-            type="text"
+            type="number"
             name="number"
             placeholder="Номер телефона"
             onChange={handleInputChange}
