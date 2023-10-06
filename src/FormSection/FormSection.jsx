@@ -42,7 +42,6 @@ const FormSection = () => {
         return
       }
 
-
     setFormIsError(false)
 
     if (!formRegistering.password,
@@ -80,13 +79,13 @@ const FormSection = () => {
       checkbox: formRegistering.checkbox
     })
 
-    console.log(formRegistering.name)
-    console.log(formRegistering.surname)
-    console.log(typeof formRegistering.number)
-    console.log(formRegistering.email)
-    console.log(formRegistering.password)
-    console.log(formRegistering.repeatpassword)
-    console.log(formRegistering.checkbox)
+    // console.log(formRegistering.name)
+    // console.log(formRegistering.surname)
+    // console.log(typeof formRegistering.number)
+    // console.log(formRegistering.email)
+    // console.log(formRegistering.password)
+    // console.log(formRegistering.repeatpassword)
+    // console.log(formRegistering.checkbox)
   }
 
   return (
