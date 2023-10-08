@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./FormSection.css";
 import FormTitle from "../FormTitle/FormTitle";
 import FormText from "../FormText/FormText";
+import FormButton from "../FormButton/FormButton";
 
 const FormSection = () => {
 
@@ -79,13 +80,13 @@ const FormSection = () => {
       checkbox: formRegistering.checkbox
     })
 
-    // console.log(formRegistering.name)
-    // console.log(formRegistering.surname)
-    // console.log(typeof formRegistering.number)
-    // console.log(formRegistering.email)
-    // console.log(formRegistering.password)
-    // console.log(formRegistering.repeatpassword)
-    // console.log(formRegistering.checkbox)
+    console.log(formRegistering.name)
+    console.log(formRegistering.surname)
+    console.log(typeof formRegistering.number)
+    console.log(formRegistering.email)
+    console.log(formRegistering.password)
+    console.log(formRegistering.repeatpassword)
+    console.log(formRegistering.checkbox)
   }
 
   return (
@@ -161,9 +162,11 @@ const FormSection = () => {
           </div>
         </div>
 
-        <button 
-        className="form-button"
-        onClick={handleFormBtn}>Продолжить</button>
+        <FormButton
+        className={"form-button"}
+        onClick={handleFormBtn}
+        text={"Продолжить"}
+         />
 
         <div className="form-bottom-text-inner">
           <p className="form-bottom-text">Уже есть аккаунт ?</p>

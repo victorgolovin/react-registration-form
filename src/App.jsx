@@ -1,5 +1,5 @@
 import React from 'react'
-import FormSection from './FormSection/FormSection'
+import FormSection from './components/FormSection/FormSection'
 
 
 const App = () => {
