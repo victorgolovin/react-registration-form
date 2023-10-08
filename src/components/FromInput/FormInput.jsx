@@ -1,15 +1,16 @@
 import React from 'react'
-import FormInput from '../FormInputs/FormInputs'
+import "./FormInput.css"
 
-
-const FormInput = (props) => {
+const FormInput = ( {className, type, name, placeholder, onChange} ) => {
 
   return (
-    <>
-      <input
-
-          />
-    </>
+    <input 
+    className={className}
+    type={type}
+    name={name}
+    placeholder={placeholder}
+    onChange={onChange}
+    />
   )
 }
 

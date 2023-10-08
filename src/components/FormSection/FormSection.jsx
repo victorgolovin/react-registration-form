@@ -4,6 +4,8 @@ import "./FormSection.css";
 import FormTitle from "../FormTitle/FormTitle";
 import FormText from "../FormText/FormText";
 import FormButton from "../FormButton/FormButton";
+import FormInput from "../FromInput/FormInput";
+
 
 const FormSection = () => {
 
@@ -102,53 +104,54 @@ const FormSection = () => {
 
 
         <div className="form-inputs">
-          <input
-            className="form-input"
-            type="text"
-            name="name"
-            placeholder="Имя"
-            onChange={handleInputChange}
-          />
 
-          <input
-            className="form-input"
-            type="text"
-            name="surname"
-            placeholder="Фамилия"
-            onChange={handleInputChange}
-          />
+          <FormInput
+          className={"form-input"}
+          type={"text"}
+          name={"name"}
+          placeholder={"Имя"}
+          onChange={handleInputChange}
+           />
 
-          <input
-            className="form-input"
-            type="number"
-            name="number"
-            placeholder="Номер телефона"
-            onChange={handleInputChange}
-          />
+          <FormInput
+          className={"form-input"}
+          type={"text"}
+          name={"surname"}
+          placeholder={"Фамилия"}
+          onChange={handleInputChange}
+           />
 
-          <input
-            className="form-input"
-            type="text"
-            name="email"
-            placeholder="Email"
-            onChange={handleInputChange}
-          />
+          <FormInput
+          className={"form-input"}
+          type={"number"}
+          name={"number"}
+          placeholder={"Номер телефона"}
+          onChange={handleInputChange}
+           />
 
-          <input
-            className="form-input"
-            type="text"
-            name="password"
-            placeholder="Пароль"
-            onChange={handleInputChange}
-          />
+          <FormInput
+          className={"form-input"}
+          type={"text"}
+          name={"email"}
+          placeholder={"Email"}
+          onChange={handleInputChange}
+           />
 
-          <input
-            className="form-input"
-            type="text"
-            name="repeatpassword"
-            placeholder="Повторите пароль"
-            onChange={handleInputChange}
-          />
+          <FormInput
+          className={"form-input"}
+          type={"text"}
+          name={"password"}
+          placeholder={"Пароль"}
+          onChange={handleInputChange}
+           />
+
+          <FormInput
+          className={"form-input"}
+          type={"text"}
+          name={"repeatpassword"}
+          placeholder={"Повторите пароль"}
+          onChange={handleInputChange}
+           />
 
           <div className="form-checkbox-inner">
           <label className="form-checkbox">            
@@ -168,9 +171,9 @@ const FormSection = () => {
         text={"Продолжить"}
          />
 
-        <div className="form-bottom-text-inner">
-          <p className="form-bottom-text">Уже есть аккаунт ?</p>
-          <a className="form-bottom-link" href="/">
+        <div className="form-footer-text-inner">
+          <p className="form-footer-text">Уже есть аккаунт ?</p>
+          <a className="form-footer-link" href="/">
             Войти
           </a>
         </div>
