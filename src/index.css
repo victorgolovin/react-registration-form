@@ -8,3 +8,11 @@ body {
   width: 1150px;
   margin: 0 auto;
 }
+
+@media (max-width: 1199px) {
+  .container {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}

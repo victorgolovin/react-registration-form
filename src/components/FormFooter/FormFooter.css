@@ -1,0 +1,69 @@
+.form-footer {
+  padding-bottom: 107px;
+}
+
+.form-footer-inner {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.form-footer-text-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-footer-text {
+  font-size: 16px;
+  line-height: 21px;
+  color: #7f7f7f;
+  position: relative;
+}
+
+.form-footer-link {
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 21px;
+  color: #4b72c2;
+  position: relative;
+}
+
+.form-footer-link::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: -25px;
+  bottom: 1px;
+  background-image: url(../../assets/arrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-footer-link:hover {
+  color: #7993c7;
+}
+
+.form-footer-link::after:hover {
+  color: #7993c7;
+}
+
+@media (max-width: 869px) {
+  .form-footer-inner {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .form-footer-text {
+    font-size: 16px;
+    line-height: 21px;
+    color: #7f7f7f;
+  }
+}
+
+@media (max-width: 599px) {
+  .form-footer-text,
+  .form-footer-link {
+    font-size: 14px;
+  }
+}
