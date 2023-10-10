@@ -40,14 +40,6 @@
   background-position: center;
 }
 
-.form-footer-link:hover {
-  color: #7993c7;
-}
-
-.form-footer-link::after:hover {
-  color: #7993c7;
-}
-
 @media (max-width: 869px) {
   .form-footer-inner {
     width: 100%;

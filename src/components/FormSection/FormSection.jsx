@@ -80,7 +80,7 @@ const FormSection = () => {
 
     console.log(formRegistering.name);
     console.log(formRegistering.surname);
-    console.log(typeof formRegistering.number);
+    console.log(formRegistering.number);
     console.log(formRegistering.email);
     console.log(formRegistering.password);
     console.log(formRegistering.repeatpassword);
